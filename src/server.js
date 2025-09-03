@@ -9,7 +9,7 @@ const dbHost = process.env.DB_HOST;
 const dbPassword = process.env.DB_PASSWORD;
 
 mongoose
-  .connect('mongodb+srv://nascimentotassi:110328@cluster0.okgwpos.mongodb.net/')
+  .connect(process.env.DB_URI)
 
   .then(() => {
     console.log("Conexão estabelecida com sucesso");
