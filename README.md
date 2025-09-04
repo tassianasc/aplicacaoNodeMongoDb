@@ -144,45 +144,48 @@ Criar uma Coleção de Testes
 - Não requer body.
 
 ### Endpoints de Tarefas (/todos)
-Lembre-se que todas essas rotas são protegidas e requerem o `access token` **no cabeçalho
+Lembre-se que todas essas rotas são protegidas e requerem o `access token`no cabeçalho
+
 **POST /api/todos - Criar Tarefa**
 
 -  **URL:** `http://localhost:3000/api/todos`
 
--  **Header:** ´Authorization: Bearer <seu_access_token>´
+-  **Header:**`Authorization: Bearer <seu_access_token>`
 
 -  **Body (raw JSON):**
-´´´
+```
 {
   "title": "Aprender a usar o Postman",
   "done": false
 }
-´´´
+```
+
 **GET /api/todos - Listar Tarefas**
 
--  **URL:** ´http://localhost:3000/api/todos´
+-  **URL:** `http://localhost:3000/api/todos`
 
--  **Header:** ´Authorization: Bearer <seu_access_token>´
+-  **Header:** `Authorization: Bearer <seu_access_token>`
 
 -  **Descrição:** Retorna a lista de tarefas do usuário autenticado.
 
 **PUT /api/todos/:id - Atualizar Tarefa**
 
--  **URL:** ´http://localhost:3000/api/todos/<id_da_tarefa>´
+-  **URL:** `http://localhost:3000/api/todos/<id_da_tarefa>`
 
--  **Header:** ´Authorization: Bearer <seu_access_token>´
+-  **Header:** `Authorization: Bearer <seu_access_token>`
 
 -  **Body (raw JSON):**
-´´´ 
+```
 {
   "done": true
 }
-´´´
+```
+
 **DELETE /api/todos/:id - Excluir Tarefa**
 
--  **URL:** ´http://localhost:3000/api/todos/<id_da_tarefa>´
+-  **URL:** `http://localhost:3000/api/todos/<id_da_tarefa>`
 
--  **Header**: ´Authorization: Bearer <seu_access_token>´
+-  **Header**:`Authorization: Bearer <seu_access_token>`
 
 -  **Descrição:** Exclui a tarefa associada ao ID fornecido.
 
