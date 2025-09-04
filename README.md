@@ -109,7 +109,7 @@ Criar uma Coleção de Testes
 }
 ```
 
--   **POST /api/auth/login - Login do Usuário**
+ **POST /api/auth/login - Login do Usuário**
 - Body (raw JSON):
 ```
 {
@@ -117,11 +117,11 @@ Criar uma Coleção de Testes
   "password": "senha_segura"
 }
 ```
--   **GET /api/users - Listar Todos os Usuário**
+ **GET /api/users - Listar Todos os Usuário**
 
 - Não requer body.
 
--  **PUT /api/users/:id - Atualizar Usuário**
+**PUT /api/users/:id - Atualizar Usuário**
 
 - URL: Substitua :id pelo _id do usuário que você deseja atualizar.
 - Body (raw JSON):
@@ -131,7 +131,7 @@ Criar uma Coleção de Testes
   "name": "Novo Nome"
 }
 ```
-- **DELETE /api/users/:id - Excluir Usuário**
+**DELETE /api/users/:id - Excluir Usuário**
 
 - URL: Substitua :id pelo _id do usuário que você deseja excluir.
 
