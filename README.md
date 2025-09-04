@@ -60,7 +60,7 @@ Siga os passos abaixo para configurar e rodar a API na sua máquina local.
 Abra o terminal e execute o seguinte comando:
 
 ```
-git clone [https://github.com/tassianasc/aplicacaoNodeMongoDb.git](https://github.com/tassianasc/aplicacaoNodeMongoDb.git)
+git clone https://github.com/tassianasc/aplicacaoNodeMongoDb.git
 cd aplicacaoNodeMongoDb 
 ```
 
