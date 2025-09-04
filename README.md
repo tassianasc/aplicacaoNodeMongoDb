@@ -31,11 +31,10 @@ Siga os passos abaixo para configurar e rodar a API na sua máquina local.
 
 Abra o terminal e execute o seguinte comando:
 
-```bash
-git clone [https://github.com/tassianasc/aplicacaoNodeMongoDb.git](https://github.com/tassianasc/aplicacaoNodeMongoDb.git)
-cd aplicacaoNodeMongoDb
+``` git clone [https://github.com/tassianasc/aplicacaoNodeMongoDb.git](https://github.com/tassianasc/aplicacaoNodeMongoDb.git)
+cd aplicacaoNodeMongoDb ```
 
-### 2. Configurar o Banco de Dados (MongoDB Atlas)
+### **2. Configurar o Banco de Dados (MongoDB Atlas)**
 A aplicação utiliza um banco de dados MongoDB Atlas gratuito.
 
 Acesse o MongoDB Atlas e crie uma conta gratuita.
@@ -48,20 +47,17 @@ Na seção Network Access, adicione o seu endereço IP atual para permitir a con
 
 Clique em Connect no seu cluster, selecione a opção Connect your application e copie a string de conexão.
 
-### 3. Criar o Arquivo de Variáveis de Ambiente
+### **3. Criar o Arquivo de Variáveis de Ambiente**
 Na pasta raiz do seu projeto, crie um arquivo chamado .env e adicione a string de conexão que você copiou, substituindo o nome de usuário e a senha. Você também pode definir um nome para o seu banco de dados na URL.
-```bash
-DB_URI=mongodb+srv://<seu_usuario>:<sua_senha>@<seu_cluster>.mongodb.net/aplicacaoNodeMongoDb?retryWrites=true&w=majority
+``` DB_URI=mongodb+srv://<seu_usuario>:<sua_senha>@<seu_cluster>.mongodb.net/aplicacaoNodeMongoDb?retryWrites=true&w=majority ```
 
-### 4. Instalar as Dependências
+### **4. Instalar as Dependências**
 A pasta node_modules é obtida executando o comando de instalação. No terminal, execute:
-```bash
-npm install
+``` npm install ```
 
-### 5. Iniciar o Servidor
+### **5. Iniciar o Servidor**
 Após a instalação, inicie o servidor com o comando:
-```bash
-node src/server.js
+``` node src/server.js ```
 
 Você verá a mensagem no terminal confirmando que a API está rodando na porta 3000 e conectada ao banco de dados.
 
@@ -77,12 +73,13 @@ Criar uma Coleção de Testes
 POST /api/users - Criar Usuário
 
 Body (raw JSON):
-```bash
+```
 {
   "name": "Nome do Usuário",
   "email": "email@exemplo.com",
   "password": "senha_segura"
 }
+```
 
 -   GET /api/users - Listar Todos os Usuários
 
@@ -93,10 +90,11 @@ Não requer body.
 URL: Substitua :id pelo _id do usuário que você deseja atualizar.
 
 Body (raw JSON):
-```bash
+```
 {
   "name": "Novo Nome"
 }
+```
 
 -  DELETE /api/users/:id - Excluir Usuário
 
@@ -109,8 +107,7 @@ Não requer body.
 Este comando é seu melhor amigo. Ele mostra o estado atual do seu repositório local e te informa quais arquivos foram modificados, quais estão prontos para o próximo commit (staged) e quais ainda não estão sendo rastreados.
 
 Como usar:
-```bash
-git status
+```git status ```
 
 Se aparecerem arquivos em vermelho: São arquivos modificados ou novos que ainda não foram preparados para o commit.
 
@@ -120,8 +117,7 @@ Se aparecerem arquivos em verde: São arquivos que já foram adicionados ao "sta
 Agora, você precisa preparar os arquivos para o commit, ou seja, adicioná-los à área de "staging".
 
 Como usar:
-```bash
-git add .
+```git add . ```
 
 O ponto (.) no final significa que você está adicionando todas as suas alterações (novos arquivos e modificações nos existentes) ao "staging area". Após este comando, se você rodar um git status novamente, verá seus arquivos na cor verde, indicando que estão prontos para o commit.
 
@@ -129,8 +125,7 @@ O ponto (.) no final significa que você está adicionando todas as suas altera�
 O commit salva uma "fotografia" das suas alterações no histórico do seu repositório local. É como um ponto de salvamento.
 
 Como usar:
-```bash
-git commit -m "docs: atualiza e detalha o README.md do projeto"
+```git commit -m "docs: atualiza e detalha o README.md do projeto" ```
 
 O comando -m (de "message") permite que você escreva uma mensagem curta e descritiva sobre o que você mudou.
 
@@ -138,7 +133,6 @@ A mensagem "docs: atualiza e detalha o README.md do projeto" é um exemplo de bo
 
 4. Enviar para o GitHub (git push)
 Este é o passo final. O push envia todos os seus commits locais para o seu repositório remoto no GitHub, tornando as alterações públicas.
-```bash
-git push
+```git push ```
 
 O Git vai se comunicar com o GitHub e enviar o seu commit. Após a conclusão, se você visitar a página do seu repositório no GitHub, verá o seu novo README.md atualizado e todas as outras mudanças que você fez.
