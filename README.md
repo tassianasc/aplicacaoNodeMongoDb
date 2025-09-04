@@ -120,7 +120,7 @@ Body (raw JSON):
 ```
 -   **GET /api/users - Listar Todos os Usuário**
 
--Não requer body.
+- Não requer body.
 
 -  **PUT /api/users/:id - Atualizar Usuário**
 
@@ -134,7 +134,7 @@ Body (raw JSON):
 ```
 - **DELETE /api/users/:id - Excluir Usuário**
 
--URL: Substitua :id pelo _id do usuário que você deseja excluir.
+- URL: Substitua :id pelo _id do usuário que você deseja excluir.
 
 - Não requer body.
 
