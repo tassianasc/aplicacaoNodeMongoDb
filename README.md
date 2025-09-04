@@ -39,8 +39,7 @@ Esta é uma API RESTful, construída com **Node.js** e **Express**, que oferece 
 
 ## ⚠️ Aviso de Segurança e Configuração
 
--   Por motivos de segurança, o arquivo `.env` (variáveis de ambiente) não é enviado para o GitHub. Ele deve ser criado e gerenciado apenas localmente. Portanto, crie o arquivo **.env** na raiz do
-projeto com a credencial do banco de dados.
+-   Por motivos de segurança, o arquivo `.env` (variáveis de ambiente) não é enviado para o GitHub. Ele deve ser criado e gerenciado apenas localmente.
 -   A pasta `node_modules`, que contém todas as dependências do projeto, é ignorada pelo Git e não deve ser enviada para o repositório.
 
 ## ⚙️ Configuração e Instalação
@@ -125,6 +124,7 @@ URL: Substitua :id pelo _id do usuário que você deseja excluir.
 Não requer body.
 
 ### Enviar as Alterações para o GitHub
+
 **1. Verificar o Status do Git (git status)**
 
 Este comando é seu melhor amigo. Ele mostra o estado atual do seu repositório local e te informa quais arquivos foram modificados, quais estão prontos para o próximo commit (staged) e quais ainda não estão sendo rastreados.
