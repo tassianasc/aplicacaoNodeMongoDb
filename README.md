@@ -16,19 +16,23 @@ Esta é uma API RESTful, construída com **Node.js** e **Express**, que oferece 
   - [4. Instalar as Dependências](#4-instalar-as-dependências)
   - [5. Iniciar o Servidor](#5-iniciar-o-servidor)
   - [🧪 Testando a API com Postman](#-testando-a-api-com-postman)
-    - [Endpoints da API](#endpoints-da-api)
+    - [Endpoints Usuários](#endpoints-usuários)
+    - [Endpoints de Tarefas](#endpoints-de-tarefas)
   - [📤 Enviar as Alterações para o GitHub](#enviar-as-alterações-para-o-github)
 
 ---
 
 ## 🚀 Funcionalidades Implementadas
 
-
+-   **Validação de Entrada:** A API valida os dados de entrada para o registro e o login de usuários usando a biblioteca **Zod**, garantindo que as informações enviadas sejam corretas antes de serem processadas.
 -   **Criação de Usuário**: Cria um novo usuário com nome, e-mail e senha. A senha é criptografada usando **bcryptjs** antes de ser salva no banco de dados.
 -   **Autenticação de Usuário**: A rota de login permite que um usuário autentique suas credenciais e receba um **JSON Web Token (JWT)** para acesso seguro às rotas protegidas.
+-   **Renovação de Tokens:** A rota de `refresh` permite que o usuário obtenha um novo par de tokens sem precisar fazer login novamente, mantendo a sessão ativa de forma segura.
+-   **Proteção de Rotas:** Um **middleware** de autenticação foi adicionado para proteger endpoints, garantindo que apenas usuários com um token JWT válido possam acessá-los.
 -   **Listagem de Usuários**: Retorna todos os usuários cadastrados no banco de dados.
 -   **Atualização de Usuário**: Permite atualizar os dados de um usuário existente.
 -   **Exclusão de Usuário**: Remove um usuário do banco de dados.
+-   **CRUD de Tarefas (/todos):** Um CRUD completo para gerenciar tarefas foi implementado. Cada tarefa é associada a um dono (owner) e acessível apenas por ele.
 
 ## 💻 Tecnologias Utilizadas
 
@@ -39,6 +43,8 @@ Esta é uma API RESTful, construída com **Node.js** e **Express**, que oferece 
 -   **dotenv**: Para gerenciar variáveis de ambiente de forma segura.
 -   **bcryptjs**: Para criptografia de senhas.
 -   **jsonwebtoken**: Para criação e verificação de tokens JWT.
+-   **cors**: Para habilitar o compartilhamento de recursos entre diferentes domínios.
+-   **Zod**: Para validação de dados de entrada.
 
 ## ⚠️ Aviso de Segurança e Configuração
 
@@ -98,7 +104,7 @@ Criar uma Coleção de Testes
 -   Dê um nome, como "API de Usuários", e clique em "Create".
 -   Clique nos três pontos (...) ao lado do nome da coleção para adicionar suas requisições.
 
-### Endpoints da API
+### Endpoints Usuários
 **POST /api/users - Criar Usuário**
 - Body (raw JSON):
 ```
@@ -136,6 +142,50 @@ Criar uma Coleção de Testes
 - URL: Substitua :id pelo _id do usuário que você deseja excluir.
 
 - Não requer body.
+
+### Endpoints de Tarefas (/todos)
+Lembre-se que todas essas rotas são protegidas e requerem o `access token` **no cabeçalho
+**POST /api/todos - Criar Tarefa**
+
+-  **URL:** `http://localhost:3000/api/todos`
+
+-  **Header:** ´Authorization: Bearer <seu_access_token>´
+
+-  **Body (raw JSON):**
+´´´
+{
+  "title": "Aprender a usar o Postman",
+  "done": false
+}
+´´´
+**GET /api/todos - Listar Tarefas**
+
+-  **URL:** ´http://localhost:3000/api/todos´
+
+-  **Header:** ´Authorization: Bearer <seu_access_token>´
+
+-  **Descrição:** Retorna a lista de tarefas do usuário autenticado.
+
+**PUT /api/todos/:id - Atualizar Tarefa**
+
+-  **URL:** ´http://localhost:3000/api/todos/<id_da_tarefa>´
+
+-  **Header:** ´Authorization: Bearer <seu_access_token>´
+
+-  **Body (raw JSON):**
+´´´ 
+{
+  "done": true
+}
+´´´
+**DELETE /api/todos/:id - Excluir Tarefa**
+
+-  **URL:** ´http://localhost:3000/api/todos/<id_da_tarefa>´
+
+-  **Header**: ´Authorization: Bearer <seu_access_token>´
+
+-  **Descrição:** Exclui a tarefa associada ao ID fornecido.
+
 
 ### Enviar as Alterações para o GitHub
 
