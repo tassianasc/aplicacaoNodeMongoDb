@@ -3,7 +3,6 @@
 Esta é uma API RESTful, construída com **Node.js** e **Express**, que oferece funcionalidades de **CRUD** (Create, Read, Update, Delete) para gerenciar usuários. O projeto se conecta a um banco de dados **MongoDB Atlas** na nuvem para garantir a persistência dos dados.
 
 ---
-
 ## 📑 Sumário
 
 - [🚀 Funcionalidades Implementadas](#-funcionalidades-implementadas)
@@ -15,9 +14,9 @@ Esta é uma API RESTful, construída com **Node.js** e **Express**, que oferece 
   - [3. Criar o Arquivo de Variáveis de Ambiente](#3-criar-o-arquivo-de-variáveis-de-ambiente)
   - [4. Instalar as Dependências](#4-instalar-as-dependências)
   - [5. Iniciar o Servidor](#5-iniciar-o-servidor)
-- [🧪 Testando a API com Postman](#-testando-a-api-com-postman)
-  - [Endpoints da API](#endpoints-da-api)
-
+  - [🧪 Testando a API com Postman](#-testando-a-api-com-postman)
+    - [🧪 Testando a API com Postman](#-testando-a-api-com-postman)
+  - [📤 Enviar as Alterações para o GitHub](#-enviar-as-alterações-para-o-github)
 ---
 
 ## 🚀 Funcionalidades Implementadas
