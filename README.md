@@ -1,6 +1,25 @@
-# API de Autenticação e CRUD com Node.js e MongoDB
+# 📌 API de Autenticação e CRUD com Node.js e MongoDB
 
 Esta é uma API RESTful, construída com **Node.js** e **Express**, que oferece funcionalidades de **CRUD** (Create, Read, Update, Delete) para gerenciar usuários. O projeto se conecta a um banco de dados **MongoDB Atlas** na nuvem para garantir a persistência dos dados.
+
+---
+
+## 📑 Sumário
+
+- [🚀 Funcionalidades Implementadas](#-funcionalidades-implementadas)
+- [💻 Tecnologias Utilizadas](#-tecnologias-utilizadas)
+- [⚠️ Aviso de Segurança e Configuração](#️-aviso-de-segurança-e-configuração)
+- [⚙️ Configuração e Instalação](#️-configuração-e-instalação)
+  - [1. Clonar o Repositório](#1-clonar-o-repositório)
+  - [2. Configurar o Banco de Dados (MongoDB Atlas)](#2-configurar-o-banco-de-dados-mongodb-atlas)
+  - [3. Criar o Arquivo de Variáveis de Ambiente](#3-criar-o-arquivo-de-variáveis-de-ambiente)
+  - [4. Instalar as Dependências](#4-instalar-as-dependências)
+  - [5. Iniciar o Servidor](#5-iniciar-o-servidor)
+- [🧪 Testando a API com Postman](#-testando-a-api-com-postman)
+  - [Endpoints da API](#endpoints-da-api)
+- [📤 Enviar as Alterações para o GitHub](#-enviar-as-alterações-para-o-github)
+
+---
 
 ## 🚀 Funcionalidades Implementadas
 
@@ -20,7 +39,8 @@ Esta é uma API RESTful, construída com **Node.js** e **Express**, que oferece 
 
 ## ⚠️ Aviso de Segurança e Configuração
 
--   Por motivos de segurança, o arquivo `.env` (variáveis de ambiente) não é enviado para o GitHub. Ele deve ser criado e gerenciado apenas localmente.
+-   Por motivos de segurança, o arquivo `.env` (variáveis de ambiente) não é enviado para o GitHub. Ele deve ser criado e gerenciado apenas localmente. Portanto, crie o arquivo **.env** na raiz do
+projeto com a credencial do banco de dados.
 -   A pasta `node_modules`, que contém todas as dependências do projeto, é ignorada pelo Git e não deve ser enviada para o repositório.
 
 ## ⚙️ Configuração e Instalação
