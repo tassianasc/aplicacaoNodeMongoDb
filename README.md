@@ -1,5 +1,6 @@
 # 📌 API de Autenticação e CRUD com Node.js e MongoDB
 
+
 Esta é uma API RESTful, construída com **Node.js** e **Express**, que oferece funcionalidades de **CRUD** (Create, Read, Update, Delete) para gerenciar usuários. O projeto se conecta a um banco de dados **MongoDB Atlas** na nuvem para garantir a persistência dos dados.
 
 ---
@@ -22,11 +23,12 @@ Esta é uma API RESTful, construída com **Node.js** e **Express**, que oferece 
 
 ## 🚀 Funcionalidades Implementadas
 
--   **Criação de Usuário**: Cria um novo usuário com nome, e-mail e senha.
+
+-   **Criação de Usuário**: Cria um novo usuário com nome, e-mail e senha. A senha é criptografada usando **bcryptjs** antes de ser salva no banco de dados.
+-   **Autenticação de Usuário**: A rota de login permite que um usuário autentique suas credenciais e receba um **JSON Web Token (JWT)** para acesso seguro às rotas protegidas.
 -   **Listagem de Usuários**: Retorna todos os usuários cadastrados no banco de dados.
 -   **Atualização de Usuário**: Permite atualizar os dados de um usuário existente.
 -   **Exclusão de Usuário**: Remove um usuário do banco de dados.
--   **Conexão com MongoDB Atlas**: A API se conecta a um banco de dados hospedado na nuvem.
 
 ## 💻 Tecnologias Utilizadas
 
@@ -35,6 +37,8 @@ Esta é uma API RESTful, construída com **Node.js** e **Express**, que oferece 
 -   **MongoDB**: Banco de dados NoSQL.
 -   **Mongoose**: Biblioteca para modelagem de dados no MongoDB.
 -   **dotenv**: Para gerenciar variáveis de ambiente de forma segura.
+-   **bcryptjs**: Para criptografia de senhas.
+-   **jsonwebtoken**: Para criação e verificação de tokens JWT.
 
 ## ⚠️ Aviso de Segurança e Configuração
 
@@ -70,7 +74,8 @@ Clique em Connect no seu cluster, selecione a opção Connect your application e
 ### **3. Criar o Arquivo de Variáveis de Ambiente**
 Na pasta raiz do seu projeto, crie um arquivo chamado .env e adicione a string de conexão que você copiou, substituindo o nome de usuário e a senha. Você também pode definir um nome para o seu banco de dados na URL.
 ``` 
-DB_URI=mongodb+srv://<seu_usuario>:<sua_senha>@<seu_cluster>.mongodb.net/aplicacaoNodeMongoDb?retryWrites=true&w=majority 
+DB_URI=mongodb+srv://<seu_usuario>:<sua_senha>@<seu_cluster>.mongodb.net/aplicacaoNodeMongoDb?retryWrites=true&w=majority
+JWT_SECRET=sua_chave_secreta_muito_segura_aqui
 ```
 
 ### **4. Instalar as Dependências**
@@ -104,15 +109,24 @@ Body (raw JSON):
   "password": "senha_segura"
 }
 ```
+
+-   **POST /api/auth/login - Login do Usuário**
+- Body (raw JSON):
+```
+{
+  "email": "email@exemplo.com",
+  "password": "senha_segura"
+}
+```
 -   **GET /api/users - Listar Todos os Usuário**
 
-Não requer body.
+-Não requer body.
 
 -  **PUT /api/users/:id - Atualizar Usuário**
 
-URL: Substitua :id pelo _id do usuário que você deseja atualizar.
+- URL: Substitua :id pelo _id do usuário que você deseja atualizar.
+- Body (raw JSON):
 
-Body (raw JSON):
 ```
 {
   "name": "Novo Nome"
@@ -120,9 +134,9 @@ Body (raw JSON):
 ```
 - **DELETE /api/users/:id - Excluir Usuário**
 
-URL: Substitua :id pelo _id do usuário que você deseja excluir.
+-URL: Substitua :id pelo _id do usuário que você deseja excluir.
 
-Não requer body.
+- Não requer body.
 
 ### Enviar as Alterações para o GitHub
 

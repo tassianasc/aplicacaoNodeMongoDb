@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const userRoutes = require("../src/routes/userRoutes");
+const authRoutes = require("./routes/authRoutes");
 const PORT = 3000;
 require("dotenv").config();
 
@@ -21,6 +22,7 @@ mongoose
 app.use(express.json());
 
 app.use("/api/users", userRoutes);
+app.use("/api/auth", authRoutes);
 
 app.listen(PORT, () => {
   console.log(`Servidor conectado na porta ${PORT}`);

@@ -1,4 +1,5 @@
-const User = require("../models/User");
+const User = require('../models/User');
+const bcrypt = require('bcryptjs');
 
 //lista usuários - GET
 exports.getAllUsers = async (req, res) => {
@@ -12,12 +13,24 @@ exports.getAllUsers = async (req, res) => {
 
 //cria usuário - POST
 exports.createUser = async (req, res) => {
-  const user = new User(req.body);
   try {
-    const savedUser = await user.save();
-    res.status(201).json(savedUser);
+    const { name, email, password } = req.body;
+
+    // Gerar um "salt" (valor aleatório) e criptografar a senha
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(password, salt);
+
+    // Criar o novo usuário com a senha criptografada
+    const newUser = new User({
+      name,
+      email,
+      password: hashedPassword // Use a senha criptografada
+    });
+
+    await newUser.save();
+    res.status(201).json(newUser);
   } catch (error) {
-    res.status(400).json({ message:"erro ao tentar criar usuários" });
+    res.status(400).json({ error: error.message });
   }
 };
 
