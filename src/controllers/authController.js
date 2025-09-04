@@ -49,3 +49,19 @@ exports.login = async (req, res) => {
     res.status(500).json({ message: 'Erro interno do servidor.' });
   }
 };
+
+// Função para retornar os dados do usuário logado
+exports.getMe = async (req, res) => {
+  try {
+    // O ID do usuário foi adicionado pelo middleware authMiddleware
+    const user = await User.findById(req.user.id).select('-password');
+    
+    if (!user) {
+      return res.status(404).json({ message: 'Usuário não encontrado.' });
+    }
+    
+    res.status(200).json(user);
+  } catch (error) {
+    res.status(500).json({ message: 'Erro interno do servidor.' });
+  }
+};
