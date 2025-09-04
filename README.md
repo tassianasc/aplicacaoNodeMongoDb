@@ -16,7 +16,7 @@ Esta é uma API RESTful, construída com **Node.js** e **Express**, que oferece 
   - [5. Iniciar o Servidor](#5-iniciar-o-servidor)
   - [🧪 Testando a API com Postman](#-testando-a-api-com-postman)
     - [Endpoints da API](#endpoints-da-api)
-  - - [📤 Enviar as Alterações para o GitHub](#enviar-as-alterações-para-o-github)
+  - [📤 Enviar as Alterações para o GitHub](#enviar-as-alterações-para-o-github)
 
 ---
 
