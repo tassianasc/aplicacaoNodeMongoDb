@@ -100,8 +100,7 @@ Criar uma Coleção de Testes
 
 ### Endpoints da API
 **POST /api/users - Criar Usuário**
-
-Body (raw JSON):
+- Body (raw JSON):
 ```
 {
   "name": "Nome do Usuário",
