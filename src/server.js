@@ -1,27 +1,44 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-const userRoutes = require("../src/routes/userRoutes");
+const userRoutes = require("./routes/userRoutes");
+const authRoutes = require("./routes/authRoutes");
+const todoRoutes = require("./routes/todoRoutes");
+const cors = require("cors");
+
 const PORT = 3000;
+
 require("dotenv").config();
 
-const dbHost = process.env.DB_HOST;
-const dbPassword = process.env.DB_PASSWORD;
+// Checagem mínima de variáveis de ambiente
+if (!process.env.DB_URI) {
+  console.warn("⚠️  Variável DB_URI não definida no .env.");
+}
+if (!process.env.JWT_SECRET) {
+  console.warn("⚠️  Variável JWT_SECRET não definida no .env.");
+}
 
+// Conexão com MongoDB
 mongoose
-  .connect('mongodb+srv://nascimentotassi:110328@cluster0.okgwpos.mongodb.net/')
-
+  .connect(process.env.DB_URI)
   .then(() => {
-    console.log("Conexão estabelecida com sucesso");
+    console.log("✅ Conexão com o banco estabelecida com sucesso");
   })
   .catch((error) => {
-    console.log("Erro ao conectar", error)
+    console.error("❌ Erro ao conectar no banco:", error.message);
   });
 
+// Middlewares globais
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 
+// Rotas
 app.use("/api/users", userRoutes);
+app.use("/api/auth", authRoutes);
+app.use("/api/todos", todoRoutes);
 
+// Inicialização do servidor
 app.listen(PORT, () => {
-  console.log(`Servidor conectado na porta ${PORT}`);
+  console.log(`🚀 Servidor rodando na porta ${PORT}`);
 });
