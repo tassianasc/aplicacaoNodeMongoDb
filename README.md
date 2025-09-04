@@ -16,7 +16,7 @@ Esta é uma API RESTful, construída com **Node.js** e **Express**, que oferece 
   - [5. Iniciar o Servidor](#5-iniciar-o-servidor)
   - [🧪 Testando a API com Postman](#-testando-a-api-com-postman)
     - [🧪 Testando a API com Postman](#-testando-a-api-com-postman)
-  - [📤 Enviar as Alterações para o GitHub](#-enviar-as-alterações-para-o-github)
+  - [📤 Enviar as Alterações para o GitHub](#enviar-as-alteracoes-para-o-github)
 ---
 
 ## 🚀 Funcionalidades Implementadas
@@ -74,10 +74,12 @@ DB_URI=mongodb+srv://<seu_usuario>:<sua_senha>@<seu_cluster>.mongodb.net/aplicac
 
 ### **4. Instalar as Dependências**
 A pasta node_modules é obtida executando o comando de instalação. No terminal, execute:
+
 ``` npm install ```
 
 ### **5. Iniciar o Servidor**
 Após a instalação, inicie o servidor com o comando:
+
 ``` node src/server.js ```
 
 Você verá a mensagem no terminal confirmando que a API está rodando na porta 3000 e conectada ao banco de dados.
