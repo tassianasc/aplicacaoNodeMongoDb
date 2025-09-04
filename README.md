@@ -31,8 +31,10 @@ Siga os passos abaixo para configurar e rodar a API na sua máquina local.
 
 Abra o terminal e execute o seguinte comando:
 
-``` git clone [https://github.com/tassianasc/aplicacaoNodeMongoDb.git](https://github.com/tassianasc/aplicacaoNodeMongoDb.git)
-cd aplicacaoNodeMongoDb ```
+```
+git clone [https://github.com/tassianasc/aplicacaoNodeMongoDb.git](https://github.com/tassianasc/aplicacaoNodeMongoDb.git)
+cd aplicacaoNodeMongoDb 
+```
 
 ### **2. Configurar o Banco de Dados (MongoDB Atlas)**
 A aplicação utiliza um banco de dados MongoDB Atlas gratuito.
@@ -49,7 +51,9 @@ Clique em Connect no seu cluster, selecione a opção Connect your application e
 
 ### **3. Criar o Arquivo de Variáveis de Ambiente**
 Na pasta raiz do seu projeto, crie um arquivo chamado .env e adicione a string de conexão que você copiou, substituindo o nome de usuário e a senha. Você também pode definir um nome para o seu banco de dados na URL.
-``` DB_URI=mongodb+srv://<seu_usuario>:<sua_senha>@<seu_cluster>.mongodb.net/aplicacaoNodeMongoDb?retryWrites=true&w=majority ```
+``` 
+DB_URI=mongodb+srv://<seu_usuario>:<sua_senha>@<seu_cluster>.mongodb.net/aplicacaoNodeMongoDb?retryWrites=true&w=majority 
+```
 
 ### **4. Instalar as Dependências**
 A pasta node_modules é obtida executando o comando de instalação. No terminal, execute:
@@ -70,7 +74,7 @@ Criar uma Coleção de Testes
 -   Clique nos três pontos (...) ao lado do nome da coleção para adicionar suas requisições.
 
 ### Endpoints da API
-POST /api/users - Criar Usuário
+**POST /api/users - Criar Usuário**
 
 Body (raw JSON):
 ```
@@ -80,12 +84,11 @@ Body (raw JSON):
   "password": "senha_segura"
 }
 ```
-
--   GET /api/users - Listar Todos os Usuários
+-   **GET /api/users - Listar Todos os Usuário**
 
 Não requer body.
 
--   PUT /api/users/:id - Atualizar Usuário
+-  **PUT /api/users/:id - Atualizar Usuário**
 
 URL: Substitua :id pelo _id do usuário que você deseja atualizar.
 
@@ -95,44 +98,44 @@ Body (raw JSON):
   "name": "Novo Nome"
 }
 ```
-
--  DELETE /api/users/:id - Excluir Usuário
+- **DELETE /api/users/:id - Excluir Usuário**
 
 URL: Substitua :id pelo _id do usuário que você deseja excluir.
 
 Não requer body.
 
 ### Enviar as Alterações para o GitHub
-1. Verificar o Status do Git (git status)
+**1. Verificar o Status do Git (git status)**
 Este comando é seu melhor amigo. Ele mostra o estado atual do seu repositório local e te informa quais arquivos foram modificados, quais estão prontos para o próximo commit (staged) e quais ainda não estão sendo rastreados.
 
 Como usar:
-```git status ```
-
+```
+git status 
+```
 Se aparecerem arquivos em vermelho: São arquivos modificados ou novos que ainda não foram preparados para o commit.
 
 Se aparecerem arquivos em verde: São arquivos que já foram adicionados ao "staging area" e estão prontos para o commit.
 
-2. Preparar as Alterações (git add)
+**2. Preparar as Alterações (git add)**
 Agora, você precisa preparar os arquivos para o commit, ou seja, adicioná-los à área de "staging".
 
 Como usar:
-```git add . ```
-
+```git add . 
+```
 O ponto (.) no final significa que você está adicionando todas as suas alterações (novos arquivos e modificações nos existentes) ao "staging area". Após este comando, se você rodar um git status novamente, verá seus arquivos na cor verde, indicando que estão prontos para o commit.
 
-3. Salvar as Alterações Localmente (git commit)
+**3. Salvar as Alterações Localmente (git commit)**
 O commit salva uma "fotografia" das suas alterações no histórico do seu repositório local. É como um ponto de salvamento.
 
 Como usar:
-```git commit -m "docs: atualiza e detalha o README.md do projeto" ```
-
+```git commit -m "docs: atualiza e detalha o README.md do projeto" 
+```
 O comando -m (de "message") permite que você escreva uma mensagem curta e descritiva sobre o que você mudou.
 
 A mensagem "docs: atualiza e detalha o README.md do projeto" é um exemplo de boa prática, usando um prefixo (docs para documentação) para classificar o tipo de alteração.
 
-4. Enviar para o GitHub (git push)
+**4. Enviar para o GitHub (git push)**
 Este é o passo final. O push envia todos os seus commits locais para o seu repositório remoto no GitHub, tornando as alterações públicas.
-```git push ```
-
+```git push 
+```
 O Git vai se comunicar com o GitHub e enviar o seu commit. Após a conclusão, se você visitar a página do seu repositório no GitHub, verá o seu novo README.md atualizado e todas as outras mudanças que você fez.
