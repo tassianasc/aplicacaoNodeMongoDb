@@ -106,6 +106,7 @@ Não requer body.
 
 ### Enviar as Alterações para o GitHub
 **1. Verificar o Status do Git (git status)**
+
 Este comando é seu melhor amigo. Ele mostra o estado atual do seu repositório local e te informa quais arquivos foram modificados, quais estão prontos para o próximo commit (staged) e quais ainda não estão sendo rastreados.
 
 Como usar:
@@ -117,6 +118,7 @@ Se aparecerem arquivos em vermelho: São arquivos modificados ou novos que ainda
 Se aparecerem arquivos em verde: São arquivos que já foram adicionados ao "staging area" e estão prontos para o commit.
 
 **2. Preparar as Alterações (git add)**
+
 Agora, você precisa preparar os arquivos para o commit, ou seja, adicioná-los à área de "staging".
 
 Como usar:
@@ -126,6 +128,7 @@ Como usar:
 O ponto (.) no final significa que você está adicionando todas as suas alterações (novos arquivos e modificações nos existentes) ao "staging area". Após este comando, se você rodar um git status novamente, verá seus arquivos na cor verde, indicando que estão prontos para o commit.
 
 **3. Salvar as Alterações Localmente (git commit)**
+
 O commit salva uma "fotografia" das suas alterações no histórico do seu repositório local. É como um ponto de salvamento.
 
 Como usar:
@@ -137,6 +140,7 @@ O comando -m (de "message") permite que você escreva uma mensagem curta e descr
 A mensagem "docs: atualiza e detalha o README.md do projeto" é um exemplo de boa prática, usando um prefixo (docs para documentação) para classificar o tipo de alteração.
 
 **4. Enviar para o GitHub (git push)**
+
 Este é o passo final. O push envia todos os seus commits locais para o seu repositório remoto no GitHub, tornando as alterações públicas.
 
 ```git push ```
