@@ -143,7 +143,7 @@ Criar uma Coleção de Testes
 
 - Não requer body.
 
-### Endpoints de Tarefas (/todos)
+### Endpoints de Tarefas
 Lembre-se que todas essas rotas são protegidas e requerem o `access token`no cabeçalho
 
 **POST /api/todos - Criar Tarefa**
