@@ -1,0 +1,306 @@
+{
+	"info": {
+		"_postman_id": "2d5a6f43-5514-4269-b4ff-5c3b050168d6",
+		"name": "aplicacaoNodeMongoDb",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38312380"
+	},
+	"item": [
+		{
+			"name": "Usuários",
+			"item": [
+				{
+					"name": "Criar usuário",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Tássia\",\r\n  \"email\": \"tassia@exemplo.com\",\r\n  \"password\": \"amaismais\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login - Obter Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"tassia@exemplo.com\",\r\n  \"password\": \"amaismais\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar todos Usuários",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Usuário autenticado",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Usuário por ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"João da Silva Atualizado\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users/<cole_o_id_do_usuario_aqui>",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"<cole_o_id_do_usuario_aqui>"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deleta usuário-por ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users/68b9cc721058bfb53c0155f2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"68b9cc721058bfb53c0155f2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter Novos Tokens",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YjlhMWQyZmNkZTU4NzdjNjBjYjIyMiIsImlhdCI6MTc1NzAwOTg1OCwiZXhwIjoxNzU3NjE0NjU4fQ.f5VPqnt22cyGw_K0gW1t6GEBNT1_d2zpANrx_1F2_Ag\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/auth/refresh",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar usuário- teste dados Inválidos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Jo\", \r\n  \"email\": \"joao.silva\",\r\n  \"password\": \"123\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "ttp://localhost:3000/api/users",
+							"protocol": "ttp",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tarefas",
+			"item": [
+				{
+					"name": "Criar Tarefa",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YjlhMWQyZmNkZTU4NzdjNjBjYjIyMiIsImlhdCI6MTc1NzAwODM5NiwiZXhwIjoxNzU3MDA5Mjk2fQ.qY_wU8K7C2zrOIquQYuNfLsmtWFmnDIFOXQswFM_w6A",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Configurar o README.md do projeto\",\r\n  \"done\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/todos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"todos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar todas as tarefas",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Tarefa",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YjlhMWQyZmNkZTU4NzdjNjBjYjIyMiIsImlhdCI6MTc1NzAwODM5NiwiZXhwIjoxNzU3MDA5Mjk2fQ.qY_wU8K7C2zrOIquQYuNfLsmtWFmnDIFOXQswFM_w6A",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/todos/<cole_o_id_da_tarefa>",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"todos",
+								"<cole_o_id_da_tarefa>"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deleta tarefa pelo id da tarefa",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YjlhMWQyZmNkZTU4NzdjNjBjYjIyMiIsImlhdCI6MTc1NzAwODM5NiwiZXhwIjoxNzU3MDA5Mjk2fQ.qY_wU8K7C2zrOIquQYuNfLsmtWFmnDIFOXQswFM_w6A",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/todos/<cole_o_id_da_tarefa>",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"todos",
+								"<cole_o_id_da_tarefa>"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
